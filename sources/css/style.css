@@ -496,7 +496,6 @@ a.topPage{
 a.news{
 	text-decoration: none;
 	display: block;
-	background: url("/images/arrow-right.png") 100% 50% no-repeat;
 	overflow: hidden;}
 a.previous{
 	font-weight: bold;
@@ -538,7 +537,6 @@ a.previous{
 	font-weight: bold;
 	text-decoration: none;
 	color: black;
-	background: url("/images/arrow-right.png") 100% 50% no-repeat;
 }
 
 /* #Article === */
@@ -587,7 +585,6 @@ a.previous{
 	height: 50px;
 	line-height: 45px;
 	position: relative;
-	background-image: url("/images/arrow-right.png")  ;
 	background-position:98% 50% ;
 	background-repeat:no-repeat ;
 	padding-right: 30px;
@@ -651,7 +648,6 @@ a.previous{
 	border-right: #999999 solid 1px;
 	height: 40px;
 	line-height: 40px;
-	background-image: url("/images/arrow-right.png")  ;
 	background-position:99% 50% ;
 	background-repeat: no-repeat;
 	text-decoration: none;}
