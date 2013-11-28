@@ -35,7 +35,7 @@ var c1=[[20337,"Lyon imite le PSG - Débrief et NOTES des joueurs (Lyon 1-0 Beti
 var txt1='';
 var txt2='';
 for (var i=0, l1=c1.length; i<l1; i++ ) {
-	var txt0='<a href="/football/article-'+c1[i][0]+'.htm" class="news"><h1>'+c1[i][1]+'</h1><div class="picture"></div><div class="chapeau">'+c1[i][2]+'</div></a>';
+	var txt0='<a href="/football/article-'+c1[i][0]+'.htm" class="news"><h1>'+c1[i][1]+'</h1><div class="picture"><img width=135 height=90 src="http://photo.maxifoot.fr/'+c1[i][3]+'1.jpg"></div><div class="chapeau">'+c1[i][2]+'</div></a>';
 	if (i<0) { txt1+=txt0; } else { txt2+=txt0; }
 }
 document.getElementById('alaune1').innerHTML=txt1;
