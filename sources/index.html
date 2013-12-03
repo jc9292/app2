@@ -1,7 +1,7 @@
 <html>
 <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black" />
 	<link href="css/style.css" type="text/css" rel="stylesheet" />
@@ -45,12 +45,28 @@ google_ad_height = 50;
 var c1=[[20337,"Lyon imite le PSG - Débrief et NOTES des joueurs (Lyon 1-0 Betis)","Après le PSG en Ligue des Champions mercredi, l'Olympique Lyonnais a décroché son ticket pour les 16...","vercoutre-4"],[20335,"Coupe du monde : des hackers auraient piraté le tirage au sort, la France serait dans le groupe de la mort...","Le tirage au sort de la phase finale de la Coupe du monde a-t-il déjà été établi ? Telle est l'hypot...","tirage-1"],[20336,"Transfert : l'OM n'est pas le seul club français intéressé par Hoarau...","Guillaume Hoarau devrait rapidement quitter la Chine, moins d'un an après y avoir posé ses crampons....","hoarau-34"],[20331,"Ligue Europa : Lyon tiraillé entre le Betis et le PSG, la dernière chance pour Bordeaux...","Lyon et Bordeaux sont de sortie à domicile ce jeudi en Ligue Europa, respectivement contre le Betis ...","gomis-vila-"],[20333,"PSG : Verratti incorrigible ? Blanc ne lui en veut pas...","Incorrigible ou victime de sa réputation ? Alors que chacun se fera son avis sur la question, Lauren...","verratti-21"],[20334,"Tottenham : Villas-Boas déjà sur la sellette, Ginola candidat...","Annoncé comme le fils spirituel de José Mourinho, André Villas-Boas ne connaît pas la même réussite ...","villas-boas-5"],[20332,"Equipe de France : les 23 pour le Brésil, son bilan, l'étrange Ballon d'Or... Deschamps se confie","Didier Deschamps est parvenu à qualifier l'équipe de France pour la prochaine Coupe du monde. Object...","deschamps-64"],[20329,"Le PSG voulait plus que la qualification - Débrief et NOTES des joueurs (PSG 2-1 Olympiakos)","Un nul lui suffisait pour se qualifier pour les 8es de finale de la Ligue des Champions. Mais le PSG...","maxwell-ibrahimovic-cavani-"],[20330,"Ligue des Champions : MU cartonne, le Real déroule, Vidal réveille la Juve, City a dû se faire violence","Huit matchs de la 5e journée de la Ligue des Champions étaient au programme ce mercredi soir. Manche...","valencia-rooney-"],[20328,"PSG : que faire de Pastore ?","Peu utilisé par Laurent Blanc, Javier Pastore reste une énigme au Paris Saint-Germain. Alors que le ...","pastore-51"],[20327,"Milan : Kaká, et si c'était lui le sauveur ?","De retour au Milan AC après un passage raté au Real Madrid, Ricardo Kaká semble retrouver une second...","kaka-11"],[20326,"Caen veut s'offrir un beau pactole en dénonçant Monaco !","La situation de l'AS Monaco ne fait pas que des heureux. Caen estime que la montée en Ligue 1 de l'A...","ocampos-1"],[20323,"Ligue des Champions : l'OM n'est pas au niveau, mais ce n'est pas le seul problème...","Cinquième défaite en cinq matchs de Ligue des Champions pour l'Olympique de Marseille mardi soir fac...","gignac-64"],[20321,"Un air de déjà vu pour l'OM... - Débrief et NOTES des joueurs (Arsenal 2-0 OM)","L'OM s'est de nouveau incliné (2-0) mardi soir, sur la pelouse d'Arsenal cette fois-ci, lors de la 5...","wilshere-"],[20322,"Ligue des Champions : le Barça et Chelsea battus, Dortmund et Milan brillent...","Les huit premiers matchs de la 5e journée de Ligue des Champions ont été joués mardi soir. L'Ajax a ...","neymar-vettman-"]];
 var txt1='';
 var txt2='';
+var titres1=new Array();
+var chapo1=[];
+var images1=[];
 for (var i=0, l1=c1.length; i<l1; i++ ) {
-	var txt0='<a href="/football/article-'+c1[i][0]+'.htm" class="news"><h1>'+c1[i][1]+'</h1><div class="picture"><img width=135 height=90 src="http://photo.maxifoot.fr/'+c1[i][3]+'1.jpg"></div><div class="chapeau">'+c1[i][2]+'</div></a>';
+	var txt0='<a href="javascript:return false;" onclick="goart('+c1[i][0]+');" class="news"><h1>'+c1[i][1]+'</h1><div class="picture"><img width=135 height=90 src="http://photo.maxifoot.fr/'+c1[i][3]+'1.jpg"></div><div class="chapeau">'+c1[i][2]+'</div></a>';
+	titres1[c1[i][0]]=c1[i][1];
+	chapo1[c1[i][0]]=c1[i][2];
+	images1[c1[i][0]]=c1[i][3];
 	if (i<0) { txt1+=txt0; } else { txt2+=txt0; }
 }
 document.getElementById('alaune1').innerHTML=txt1;
 document.getElementById('alaune2').innerHTML=txt2;
+function goart(ida) {
+	var art1='<div id="contents" class="article">';
+	art1+='<div class="author">le <b>03/12/2013</b> à <b>21h09</b><!--bouton_taille_police--></div>';
+	art1+='<h1>'+titres1[ida]+'</h1>';
+	art1+='<div class="picture"><center><img id=i1 width="90%" ';
+	art1+='src="http://photo.maxifoot.fr/'+images1[ida]+'1.jpg" alt=""/></center></div>';
+	art1+='<div class="legend"></div>';
+	art1+='<div class="chapeau">'+chapo1[ida]+'</div></div>';
+	document.getElementById('alaune1').innerHTML=art1;
+}
 </script>
 	<div class="footer">
 		<a href="#topheader" class="topPage">Haut de page</a>
