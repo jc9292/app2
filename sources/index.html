@@ -5,44 +5,65 @@
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black" />
 	<link href="css/style.css" type="text/css" rel="stylesheet" />
-	<script type="text/javascript" src="jembe.js"></script>
+<!-- //	<script type="text/javascript" src="js/jembe.js"></script> -->
+	<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+	<script type="text/javascript" src="js/jquery-ui.js"></script>
 </head>
 <body>
+<!-- // <script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"> // -->
 <a name="topheader"></a>
 <div id="container" style="margin-top:85px;">
 	<div id=ipub1 style="margin:0 auto; width:320px;">
-		<div style="position:fixed; width:320px; top:0px; z-index:9999;">
-	</div></div>
+		<div style="position:fixed; width:320px; top:0px; z-index:9999;"></div>
+	</div>
 	<div id="header" style="display:block; width:100%; position:fixed; top:0px; z-index:999;">
 		<a href="/menu.htm" class="button menu">Menu</a>
 		<a href="javascript:window.location.reload()" class="button reload"><img src="http://m.maxifoot.fr/images/bt-reload2.png" width=14 height=18 alt="" /></a>
 		<a href="/" class="logo"><img id=logo1 src="http://m.maxifoot.fr/images/logo-maxifoot3.gif" alt="Maxifoot" width=102 height=38 /></a>
 	</div>
 	<ul id="navigation" style="display:block; width:100%; position:fixed; top:42px; z-index:999; overflow:hidden; white-space:nowrap;">
-		<li id=m1><a href="/">La Une</a></li>
-		<li id=m2><a href="/breves.htm">Brèves</a></li>
+		<li id=m1><a href="#" onclick="goune();">La Une</a></li>
+		<li id=m2><a href="#" onclick="gobreves();">Br�ves</a></li>
 		<li id=m3 style="padding:0 11px;"><a href="/live.htm">Live</a></li>
-		<li id=m4><a href="/resu-clas.htm">Résult.</a></li>
+		<li id=m4><a href="/resu-clas.htm">R�sult.</a></li>
 		<li id=m5><a href="/plus.htm" style="font-size:24px;">+</a></li>
 	</ul>
-<div id="contents" class="alaune version">
-<div id="alaune1"></div>
-<center>
-<script type="text/javascript"><!--
-google_ad_client = "ca-pub-2460407544523398";
-google_ad_slot = "4053045981";
-google_ad_width = 320;
-google_ad_height = 50;
-//-->
-</script>
-<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
-</script>
-</center>
-<div id="alaune2"></div>
-<a onclick="loadplus1(this);return false;" href="/article-precedent.htm" class="news previous">Charger plus d'articles</a>
+
+	<div id="contents_une" class="alaune version">
+		<div id="alaune1"></div>
+		<script type="text/javascript"><!--
+		google_ad_client = "ca-pub-2460407544523398";
+		google_ad_slot = "4053045981";
+		google_ad_width = 320;
+		google_ad_height = 50;
+		//-->
+		</script>
+		<div id="alaune2"></div>
+		<a onclick="loadplus1(this);return false;" href="/article-precedent.htm" class="news previous">Charger plus d'articles</a>
+	</div>
+
+	<div id="contents_art" class="article">
+		<div id="topart"></div>
+		<script type="text/javascript"><!--
+		google_ad_slot = "2742095598";
+		//--></script>
+	</div>
+
+	<div id="contents_breves" class="breves" style="display:none;">
+		<div id="breves1"></div>
+	        <script type="text/javascript"><!--
+	        google_ad_slot = "2742095598";
+	        //--></script>
+	        <div id="breves2"></div>
+	</div>
+        <div class="footer">
+                <a href="#topheader" class="topPage">Haut de page</a>
+                <a href="/maxifoot-version-www.php" class="versionWeb">version web classique</a>
+        </div>
 </div>
+
 <script type="text/javascript">
-var c1=[[20337,"Lyon imite le PSG - Débrief et NOTES des joueurs (Lyon 1-0 Betis)","Après le PSG en Ligue des Champions mercredi, l'Olympique Lyonnais a décroché son ticket pour les 16...","vercoutre-4"],[20335,"Coupe du monde : des hackers auraient piraté le tirage au sort, la France serait dans le groupe de la mort...","Le tirage au sort de la phase finale de la Coupe du monde a-t-il déjà été établi ? Telle est l'hypot...","tirage-1"],[20336,"Transfert : l'OM n'est pas le seul club français intéressé par Hoarau...","Guillaume Hoarau devrait rapidement quitter la Chine, moins d'un an après y avoir posé ses crampons....","hoarau-34"],[20331,"Ligue Europa : Lyon tiraillé entre le Betis et le PSG, la dernière chance pour Bordeaux...","Lyon et Bordeaux sont de sortie à domicile ce jeudi en Ligue Europa, respectivement contre le Betis ...","gomis-vila-"],[20333,"PSG : Verratti incorrigible ? Blanc ne lui en veut pas...","Incorrigible ou victime de sa réputation ? Alors que chacun se fera son avis sur la question, Lauren...","verratti-21"],[20334,"Tottenham : Villas-Boas déjà sur la sellette, Ginola candidat...","Annoncé comme le fils spirituel de José Mourinho, André Villas-Boas ne connaît pas la même réussite ...","villas-boas-5"],[20332,"Equipe de France : les 23 pour le Brésil, son bilan, l'étrange Ballon d'Or... Deschamps se confie","Didier Deschamps est parvenu à qualifier l'équipe de France pour la prochaine Coupe du monde. Object...","deschamps-64"],[20329,"Le PSG voulait plus que la qualification - Débrief et NOTES des joueurs (PSG 2-1 Olympiakos)","Un nul lui suffisait pour se qualifier pour les 8es de finale de la Ligue des Champions. Mais le PSG...","maxwell-ibrahimovic-cavani-"],[20330,"Ligue des Champions : MU cartonne, le Real déroule, Vidal réveille la Juve, City a dû se faire violence","Huit matchs de la 5e journée de la Ligue des Champions étaient au programme ce mercredi soir. Manche...","valencia-rooney-"],[20328,"PSG : que faire de Pastore ?","Peu utilisé par Laurent Blanc, Javier Pastore reste une énigme au Paris Saint-Germain. Alors que le ...","pastore-51"],[20327,"Milan : Kaká, et si c'était lui le sauveur ?","De retour au Milan AC après un passage raté au Real Madrid, Ricardo Kaká semble retrouver une second...","kaka-11"],[20326,"Caen veut s'offrir un beau pactole en dénonçant Monaco !","La situation de l'AS Monaco ne fait pas que des heureux. Caen estime que la montée en Ligue 1 de l'A...","ocampos-1"],[20323,"Ligue des Champions : l'OM n'est pas au niveau, mais ce n'est pas le seul problème...","Cinquième défaite en cinq matchs de Ligue des Champions pour l'Olympique de Marseille mardi soir fac...","gignac-64"],[20321,"Un air de déjà vu pour l'OM... - Débrief et NOTES des joueurs (Arsenal 2-0 OM)","L'OM s'est de nouveau incliné (2-0) mardi soir, sur la pelouse d'Arsenal cette fois-ci, lors de la 5...","wilshere-"],[20322,"Ligue des Champions : le Barça et Chelsea battus, Dortmund et Milan brillent...","Les huit premiers matchs de la 5e journée de Ligue des Champions ont été joués mardi soir. L'Ajax a ...","neymar-vettman-"]];
+var c1=[[20337,"Lyon imite le PSG - D�brief et NOTES des joueurs (Lyon 1-0 Betis)","Apr�s le PSG en Ligue des Champions mercredi, l'Olympique Lyonnais a d�croch� son ticket pour les 16...","vercoutre-4"],[20335,"Coupe du monde : des hackers auraient pirat� le tirage au sort, la France serait dans le groupe de la mort...","Le tirage au sort de la phase finale de la Coupe du monde a-t-il d�j� �t� �tabli ? Telle est l'hypot...","tirage-1"],[20336,"Transfert : l'OM n'est pas le seul club fran�ais int�ress� par Hoarau...","Guillaume Hoarau devrait rapidement quitter la Chine, moins d'un an apr�s y avoir pos� ses crampons....","hoarau-34"],[20331,"Ligue Europa : Lyon tiraill� entre le Betis et le PSG, la derni�re chance pour Bordeaux...","Lyon et Bordeaux sont de sortie � domicile ce jeudi en Ligue Europa, respectivement contre le Betis ...","gomis-vila-"],[20333,"PSG : Verratti incorrigible ? Blanc ne lui en veut pas...","Incorrigible ou victime de sa r�putation ? Alors que chacun se fera son avis sur la question, Lauren...","verratti-21"],[20334,"Tottenham : Villas-Boas d�j� sur la sellette, Ginola candidat...","Annonc� comme le fils spirituel de Jos� Mourinho, Andr� Villas-Boas ne conna�t pas la m�me r�ussite ...","villas-boas-5"],[20332,"Equipe de France : les 23 pour le Br�sil, son bilan, l'�trange Ballon d'Or... Deschamps se confie","Didier Deschamps est parvenu � qualifier l'�quipe de France pour la prochaine Coupe du monde. Object...","deschamps-64"],[20329,"Le PSG voulait plus que la qualification - D�brief et NOTES des joueurs (PSG 2-1 Olympiakos)","Un nul lui suffisait pour se qualifier pour les 8es de finale de la Ligue des Champions. Mais le PSG...","maxwell-ibrahimovic-cavani-"],[20330,"Ligue des Champions : MU cartonne, le Real d�roule, Vidal r�veille la Juve, City a d� se faire violence","Huit matchs de la 5e journ�e de la Ligue des Champions �taient au programme ce mercredi soir. Manche...","valencia-rooney-"],[20328,"PSG : que faire de Pastore ?","Peu utilis� par Laurent Blanc, Javier Pastore reste une �nigme au Paris Saint-Germain. Alors que le ...","pastore-51"],[20327,"Milan : Kak�, et si c'�tait lui le sauveur ?","De retour au Milan AC apr�s un passage rat� au Real Madrid, Ricardo Kak� semble retrouver une second...","kaka-11"],[20326,"Caen veut s'offrir un beau pactole en d�non�ant Monaco !","La situation de l'AS Monaco ne fait pas que des heureux. Caen estime que la mont�e en Ligue 1 de l'A...","ocampos-1"],[20323,"Ligue des Champions : l'OM n'est pas au niveau, mais ce n'est pas le seul probl�me...","Cinqui�me d�faite en cinq matchs de Ligue des Champions pour l'Olympique de Marseille mardi soir fac...","gignac-64"],[20321,"Un air de d�j� vu pour l'OM... - D�brief et NOTES des joueurs (Arsenal 2-0 OM)","L'OM s'est de nouveau inclin� (2-0) mardi soir, sur la pelouse d'Arsenal cette fois-ci, lors de la 5...","wilshere-"],[20322,"Ligue des Champions : le Bar�a et Chelsea battus, Dortmund et Milan brillent...","Les huit premiers matchs de la 5e journ�e de Ligue des Champions ont �t� jou�s mardi soir. L'Ajax a ...","neymar-vettman-"]];
 var txt1='';
 var txt2='';
 var titres1=new Array();
@@ -55,36 +76,62 @@ for (var i=0, l1=c1.length; i<l1; i++ ) {
 	images1[c1[i][0]]=c1[i][3];
 	if (i<0) { txt1+=txt0; } else { txt2+=txt0; }
 }
-document.getElementById('alaune1').innerHTML=txt1;
+// document.getElementById('alaune1').innerHTML=txt1;
 document.getElementById('alaune2').innerHTML=txt2;
+var viewc1='une';
 function goart(ida) {
-	var art1='<div id="contents" class="article">';
-	art1+='<div class="author">le <b>03/12/2013</b> à <b>21h09</b><!--bouton_taille_police--></div>';
+	var art1='<div class="author">le <b>03/12/2013</b> � <b>21h09</b><!--bouton_taille_police--></div>';
 	art1+='<h1>'+titres1[ida]+'</h1>';
 	art1+='<div class="picture"><center><img id=i1 width="90%" ';
 	art1+='src="http://photo.maxifoot.fr/'+images1[ida]+'1.jpg" alt=""/></center></div>';
 	art1+='<div class="legend"></div>';
-	art1+='<div class="chapeau">'+chapo1[ida]+'</div></div>';
-	document.getElementById('alaune1').innerHTML=art1;
+	art1+='<div class="chapeau">'+chapo1[ida]+'</div>';
+	$('#topart').html(art1);
+	$('#contents_'+viewc1).hide();
+	viewc1='art';
+	$('#contents_'+viewc1).show('slide',{direction:'right'});
+	return false;
 }
+function gobreves() {
+	$('#contents_'+viewc1).hide();
+	viewc1='breves';
+	$('#contents_breves').show('slide',{direction:'right'});
+//	affpub();
+	return false;
+}
+function goune() {
+        $('#contents_'+viewc1).hide();
+        viewc1='une';
+        $('#contents_'+viewc1).show('slide',{direction:'right'});
+//      affpub();
+        return false;
+}
+
+var c1=[[189299,"23h01","Monaco : Ranieri pas totalement satisfait"],[189291,"22h51","L1 : Nice 0-3 Monaco"],[189297,"22h26","Lille : Enyeama d�passe Sirigu et fond sur Huard"],[189296,"22h13","VA : A. Jacobs - \"on m�rite mieux\""],[189295,"22h10","Nantes : \"un bon matelas\" pour Der Zakarian"],[189294,"22h03","OM : Valbuena et Payet bless�s"],[189293,"21h57","OM : Enyeama, \"un running-gag\" pour Labrune"],[189292,"21h16","Lille : R. Girard - \"encore 1-0...\""],[189288,"20h58","L1 : le classement provisoire"],[189287,"20h57","L1 : Nantes 2-1 VA"],[189286,"20h50","L1 : Lille 1-0 OM"],[189289,"20h00","L1 : Nice - Monaco, les compos"],[189283,"18h55","CdM : Blatter confirme les horaires de matchs"],[189282,"18h48","PSG : le groupe, sans Alex, Lavezzi et Motta"],[189281,"18h23","L1 : Nantes - VA, les compos"],[189280,"18h22","L1 : Lille - OM, les compos"],[189278,"17h46","PSG : Pastore va devoir cravacher annonce Blanc"],[189279,"17h16","CdM : un tirage au sort en plus pour la France"],[189277,"17h08","OM : Labrune veut oublier l'incident Thauvin"],[189275,"16h32","PSG : Blanc conna�t le probl�me de Lavezzi"],[189276,"16h02","Lille : Wimb�e impressionn� par Enyeama"],[189273,"15h41","Monaco : Otamendi pour renforcer la d�fense ?"],[189274,"15h21","PSG : Blanc s'attend � des demandes de d�part"],[189272,"15h01","Juve : Vidal, un souci en moins"],[189271,"14h30","PSG : Thiago Silva d�voile la force de Blanc"],[189270,"14h28","Lyon : Naples va mettre le paquet pour Gonalons"],[189269,"13h47","Nantes : Hull City veut s'offrir Djordjevic"],[189265,"13h26","OM : Thauvin insult�, le club s'indigne"],[189268,"13h18","PSG : Mazzarri fait le forcing pour Lavezzi !"],[189267,"12h45","Real : Benzema aurait perdu 5 kilos"],[189266,"12h27","VIDEO : l'accueil r�serv� � Thauvin � Lille"],[189264,"12h11","Chelsea : concurrence Bar�a-Bayern pour D. Luiz"],[189263,"11h46","OM : Gignac a choisi pour janvier"],[189262,"11h21","Lille : Puel-Garcia-Girard, Seydoux pr�f�re..."],[189260,"11h01","PSG : deux joueurs indispensables pour T. Silva"],[189261,"10h46","Tottenham : Gomes �voque sa relation avec Lloris"],[189259,"10h23","Montpellier : J. Fernandez - \"come on\""],[189258,"10h03","OM : un tripl� de Thauvin ? Tonton Adil y croit"],[189257,"09h49","Bar�a : des envies d'ailleurs pour Pedro ?"],[189245,"09h31","Tottenham : Villas-Boas s'en prend aux m�dias"],[189256,"09h16","Real : Monaco tent� par Di Maria ?"],[189255,"09h08","L1 : Nice-Monaco, les compos probables"],[189252,"09h00","Real : Sergio Ramos met fin aux rumeurs"],[189251,"08h49","L1 : le programme de la 16e journ�e"],[189249,"08h46","Lille : les dirigeants appellent au calme"],[189250,"08h41","Nantes : Der Zakarian ne s'en fait pas"],[189247,"08h30","Lille : R. Mavuba - \"Girard, notre atout majeur\""],[189248,"08h25","VA : apr�s Pujol, Le Tallec..."],[189246,"08h16","Lille : Mavuba ne se focalise pas sur Thauvin"],[189231,"02/12","L2 : le classement des buteurs"],[189230,"02/12","L2 : le classement complet"],[189229,"02/12","L2 : Metz prend son envol !"],[189244,"02/12","OM : Thauvin insult� � Lille"],[189243,"02/12","Lille : Seydoux \"content\" pour Thauvin"],[189236,"02/12","Liverpool : Sturridge out 8 semaines"],[189242,"02/12","Lille : R. Girard - \"on ne joue pas Thauvin\""],[189228,"02/12","Ita. : la Fiorentina se relance !"],[189240,"02/12","Man City : Y. Tour� joueur africain de l'ann�e"],[189241,"02/12","OM : Diawara parle du retour de Thauvin"],[189239,"02/12","Monaco : toujours pas de Falcao � Nice"]];
+var txt1='<ul>';
+var txt2='<ul>';
+for (var i=0, l1=c1.length; i<l1; i++ ) {
+	var txt0='<li><a href="breve-'+c1[i][0]+'_'+c1[i][1]+'.htm"><span class="hour">'+c1[i][1]+'</span><span class="title">'+c1[i][2]+'</span></a></li>';
+	if (i<0) { txt1+=txt0; } else { txt2+=txt0; }
+}
+document.getElementById('breves1').innerHTML=txt1+'</ul>';
+document.getElementById('breves2').innerHTML=txt2+'</ul>';
 </script>
-	<div class="footer">
-		<a href="#topheader" class="topPage">Haut de page</a>
-		<a href="/maxifoot-version-www.php" class="versionWeb">version web classique</a>
-	</div>
-</div>
-<script type="text/javascript">
-document.write("type: " + jembe.internet.type);
-document.getElementById('m1').className='active';
-document.getElementById('logo1').src='http://m.maxifoot.fr/images/logo-maxifoot-big.png';
+
+<script type="text/javascript"> 
+// document.write("type: " + jembe.internet.type);
+// document.getElementById('m1').className='active';
+// document.getElementById('logo1').src='http://m.maxifoot.fr/images/logo-maxifoot-big.png';
 var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-8810278-7']);
 _gaq.push(['_trackPageview']);
-(function() {
+function affpub() {
   var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
   ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-})();
+  var s = document.getElementsByTagName('script')[0];
+  s.parentNode.insertBefore(ga, s);
+}
+// affpub();
 </script>
 </body>
 </html>
