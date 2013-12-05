@@ -6,14 +6,15 @@
         <meta name="apple-mobile-web-app-status-bar-style" content="black" />
 	<link href="css/style.css" type="text/css" rel="stylesheet" />
 <!-- //	<script type="text/javascript" src="js/jembe.js"></script> -->
-	<script type="text/javascript" src="http://stats.maxifoot.com/0_app_mobile/js/jquery-1.10.2.min.js"></script>
-	<script type="text/javascript" src="http://stats.maxifoot.com/0_app_mobile/js/jquery-ui.js"></script>
+	<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+	<script type="text/javascript" src="js/jquery-ui.js"></script>
 	<script type="text/javascript" src="js/cbp.js"></script>
+	<script type="text/javascript" src="js/jquery.touchSwipe.min.js"></script>
 	<link href="css/cbp.css" type="text/css" rel="stylesheet" />
 </head>
 <body class="cbp-spmenu-push">
 <!-- // <script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"> // -->
-<div id=menu1 style="display:none">
+<div id=menu1>
 <nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left">
         <style>
         #contents li a { color:#fff; }
@@ -136,15 +137,16 @@ var titres1=new Array();
 var chapo1=[];
 var images1=[];
 for (var i=0, l1=c1.length; i<l1; i++ ) {
-	var txt0='<a href="javascript:return false;" onclick="goart('+c1[i][0]+');" class="news"><h1>'+c1[i][1]+'</h1><div class="picture">';
-	txt0+='<img width=135 height=90 src="http://photo.maxifoot.fr/'+c1[i][3]+'1.jpg"></div><div class="chapeau">'+c1[i][2]+'</div></a>';
+	var txt0='<li id="art'+c1[i][0]+'" class="news goart"><h1>'+c1[i][1]+'</h1><div class="picture">';
+	txt0+='<img width=135 height=90 src="http://photo.maxifoot.fr/'+c1[i][3]+'1.jpg"></div><div class="chapeau">'+c1[i][2]+'</div></li>';
 	titres1[c1[i][0]]=c1[i][1];
 	chapo1[c1[i][0]]=c1[i][2];
 	images1[c1[i][0]]=c1[i][3];
 	if (i<0) { txt1+=txt0; } else { txt2+=txt0; }
 }
+
 // document.getElementById('alaune1').innerHTML=txt1;
-document.getElementById('alaune2').innerHTML=txt2;
+document.getElementById('alaune2').innerHTML='<ul>'+txt2+'</ul>';
 var viewc1='une';
 function goart(ida) {
 	var art1='<div class="author">le <b>03/12/2013</b> à <b>21h09</b><!--bouton_taille_police--></div>';
@@ -156,27 +158,27 @@ function goart(ida) {
 	$('#topart').html(art1);
 	$('#contents_'+viewc1).hide();
 	viewc1='art';
-	$('#contents_'+viewc1).show('slide',{direction:'right'});
+	$('#contents_'+viewc1).show('slide',{direction:'right'},200);
 	return false;
 }
 function gobreves() {
 	$('#contents_'+viewc1).hide();
 	viewc1='breves';
-	$('#contents_breves').show('slide',{direction:'right'});
+	$('#contents_breves').show('slide',{direction:'right'},200);
 //	affpub();
 	return false;
 }
 function goune() {
         $('#contents_'+viewc1).hide();
         viewc1='une';
-        $('#contents_'+viewc1).show('slide',{direction:'right'});
+        $('#contents_'+viewc1).show('slide',{direction:'left'},200);
 //      affpub();
         return false;
 }
 function gopage(idp) {
 	$('#contents_'+viewc1).hide();
 	viewc1=idp;
-	$('#contents_'+viewc1).show('slide',{direction:'right'});
+	$('#contents_'+viewc1).show('slide',{direction:'right'},200);
 	return false;
 }
 
@@ -184,13 +186,44 @@ var c1=[[189299,"23h01","Monaco : Ranieri pas totalement satisfait"],[189291,"22
 var txt1='<ul>';
 var txt2='<ul>';
 for (var i=0, l1=c1.length; i<l1; i++ ) {
-	var txt0='<li><a href="breve-'+c1[i][0]+'_'+c1[i][1]+'.htm"><span class="hour">'+c1[i][1]+'</span><span class="title">'+c1[i][2]+'</span></a></li>';
+	var txt0='<li id="news'+c1[i][0]+'_'+c1[i][1]+'" class="gonews"><span class="hour">'+c1[i][1]+'</span><span class="title">'+c1[i][2]+'</span></li>';
 	if (i<0) { txt1+=txt0; } else { txt2+=txt0; }
 }
 document.getElementById('breves1').innerHTML=txt1+'</ul>';
 document.getElementById('breves2').innerHTML=txt2+'</ul>';
-</script>
 
+$(function() {      
+      //Enable swiping...
+      $("li.goart").swipe( {
+        //Generic swipe handler for all directions
+  	    tap:function(event, target) {
+			goart($(this).attr('id').replace('art',''));
+		},
+	        swipeLeft:function() {
+			 gobreves();
+        	},
+        	//Default is 75px, set to 0 for demo so any distance triggers swipe
+        	threshold:20
+      });
+	$('#contents_une').swipe( {
+		swipeDown:function(event, direction, distance, duration, fingerCount) {
+			var pos1=$('#contents_une').offset().top-$(window).scrollTop();
+			if (pos1>80) { 
+				$('#alaune1').html('<div id=reload1 style="width:100%;height:30px;background:#999;">reload</div>');
+				setTimeout(function() { $('#reload1').hide(); },2000);
+			}
+		},
+		threshold:20
+	});
+	$('li.gonews').swipe( {
+		swipeRight:function() {
+                         goune();
+                },
+		threshold:20
+	});
+		
+});
+</script>
 <script type="text/javascript"> 
 // document.write("type: " + jembe.internet.type);
 // document.getElementById('m1').className='active';
