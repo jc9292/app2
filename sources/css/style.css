@@ -564,11 +564,11 @@ a.previous{
 .article b {font-weight:bold;}
 
 /* #Breves === */
-#contents.breves ul{margin:0 -7px;}
-#contents.breves ul li{
+#contents_breves.breves ul{margin:0 -7px;}
+#contents_breves.breves ul li{
 	margin-bottom: 0;
 	text-align: left;}
-#contents.breves ul li.previous{
+#contents_breves.breves ul li.previous{
 	background: none;
 	font-weight: bold;
 	text-decoration: underline;
@@ -576,12 +576,12 @@ a.previous{
 	border: 1px dotted silver;
 	padding-left: 12px;
 	color:#F40845;}
-#contents.breves ul li.previous a{
+#contents_breves.breves ul li.previous a{
 	padding: 0;
 	height: 30px;
 	line-height: 30px;
 	color:#F40845;}
-#contents.breves ul li a {
+#contents_breves.breves ul li a {
 	height: 50px;
 	line-height: 45px;
 	position: relative;
@@ -591,21 +591,21 @@ a.previous{
 	margin-bottom: 0;
 	display: block;
 	text-decoration: none;}
-#contents.breves ul li:last-child{
+#contents_breves.breves ul li:last-child{
 	border-bottom: 5px white solid;}
-#contents.breves ul li span { 
+#contents_breves.breves ul li span { 
 	vertical-align:middle;
 	display:inline-block;
 	line-height:1.2; /* on retablit le line-height */
 }
-#contents.breves ul li span.hour { 
+#contents_breves.breves ul li span.hour { 
 	color: #F40845;
 	font-weight: bold;
 	text-align: center;
 	width: 62px;
 	position: absolute;
 	top:18px;}
-#contents.breves ul li span.title { 
+#contents_breves.breves ul li span.title { 
 	margin-left: 65px;
 	font-weight: bold;
 	color: #10509D;
