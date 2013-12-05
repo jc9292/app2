@@ -493,11 +493,12 @@ a.topPage{
 	margin-bottom: 5px;
 	border-bottom: 1px dotted silver;
 	display: block;}
-a.news{
+a.news,li.news{
+	cursor:pointer;
 	text-decoration: none;
 	display: block;
 	overflow: hidden;}
-a.previous{
+a.previous,li.previous{
 	font-weight: bold;
 	text-decoration: underline;
 	font-size: 1.2em;
@@ -576,12 +577,12 @@ a.previous{
 	border: 1px dotted silver;
 	padding-left: 12px;
 	color:#F40845;}
-#contents_breves.breves ul li.previous a{
+#contents_breves.breves ul li.previous a, #contents_breves.breves ul li.previous{
 	padding: 0;
 	height: 30px;
 	line-height: 30px;
 	color:#F40845;}
-#contents_breves.breves ul li a {
+#contents_breves.breves ul li a,#contents_breves.breves ul li {
 	height: 50px;
 	line-height: 45px;
 	position: relative;
@@ -591,7 +592,7 @@ a.previous{
 	margin-bottom: 0;
 	display: block;
 	text-decoration: none;}
-#contents_breves.breves ul li:last-child{
+#contents_breves.breves ul li:last-child {
 	border-bottom: 5px white solid;}
 #contents_breves.breves ul li span { 
 	vertical-align:middle;
@@ -907,3 +908,37 @@ button.voteSondage{
 @media only screen and (max-width: 479px) {
 	#navigation li:last-child { border-right: none; } /* suppression du dernier filet blanc dans menu */
 }
+
+.live1 .header{ background-color:#999999;
+        -moz-border-radius: 6px 6px 0 0;
+        -webkit-border-radius: 6px 6px 0px 0px;
+        border-radius: 6px 6px 0px 0px;
+        text-shadow:-1px -1px 0px #000;
+        color:#fff;
+        line-height:30px;
+        margin-top:10px;
+        padding:0 8px;
+        font:bold 14px/30px arial;
+        clear:both;
+        overflow:none;
+        min-height: 30px;}
+.live1 { margin:0 6px; }
+.live1 a {display:block; border:#999 solid 1px; border-width:0 1px; height:36px; padding:0 8px 0 6px; line-height:36px;
+        background:url("http://m.maxifoot.fr/images/arrow-right.png") 99% 50% no-repeat; text-decoration:none; }
+
+.live1 a:nth-child(2n+1) { background-color:#E6E6E6; }
+.live1 a:last-child { border-bottom:#999 solid 1px; }
+.live1 span { display:inline-block; overlow:hidden; float:left; }
+
+.live1 .pays1 { width:60%; text-align:left; overflow:hidden; line-height:12px; height:36px; }
+.live1 .pays1 b { font:bold 13px/13px arial; color:#000; margin-top:5px; display:inline-block; white-space:nowrap; }
+.live1 .pays1 i { color:#666; font:12px/14px arial; white-space:nowrap; display:inline-block; }
+
+.live1 .etat1 { width:20%; text-align:center; height:36px; overflow:hidden; }
+.live1 .etat1 b { background:#F40845; width:44px; font:bold 14px/20px arial; display:inline-block; text-align:center; height:20px;
+	-moz-border-radius:10px; -webkit-border-radius:10px; border-radius:10px; color:#fff; margin:8px 0; }
+.live1 .etat1 i { color:#666; font:11px/36px arial; width:44px; display:inline-block; text-align:center; }
+
+.live1 .nbm1 { width:16%; text-align:center; height:36px; overflow:hidden; }
+.live1 .nbm1 b { font:bold 13px/36px arial; color:#000; }
+.live1 .nbm1 i { font:bold 13px/36px arial; color:#bbb; }
