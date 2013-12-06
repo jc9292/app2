@@ -77,6 +77,7 @@ jQuery(document).ready(function($) {
 
 	<div id="contents_art" class="article">
 		<div id="topart"></div>
+		<div id="cmtbfmf"></div>
 		<script type="text/javascript"><!--
 		google_ad_slot = "2742095598";
 		//--></script>
@@ -128,7 +129,7 @@ jQuery(document).ready(function($) {
                 <a href="/maxifoot-version-www.php" class="versionWeb">version web classique</a>
         </div>
 </div>
-
+<div id="fb-root"></div>
 <script type="text/javascript">
 var c1=[[20337,"Lyon imite le PSG - Débrief et NOTES des joueurs (Lyon 1-0 Betis)","Après le PSG en Ligue des Champions mercredi, l'Olympique Lyonnais a décroché son ticket pour les 16...","vercoutre-4"],[20335,"Coupe du monde : des hackers auraient piraté le tirage au sort, la France serait dans le groupe de la mort...","Le tirage au sort de la phase finale de la Coupe du monde a-t-il déjà été établi ? Telle est l'hypot...","tirage-1"],[20336,"Transfert : l'OM n'est pas le seul club français intéressé par Hoarau...","Guillaume Hoarau devrait rapidement quitter la Chine, moins d'un an après y avoir posé ses crampons....","hoarau-34"],[20331,"Ligue Europa : Lyon tiraillé entre le Betis et le PSG, la dernière chance pour Bordeaux...","Lyon et Bordeaux sont de sortie à domicile ce jeudi en Ligue Europa, respectivement contre le Betis ...","gomis-vila-"],[20333,"PSG : Verratti incorrigible ? Blanc ne lui en veut pas...","Incorrigible ou victime de sa réputation ? Alors que chacun se fera son avis sur la question, Lauren...","verratti-21"],[20334,"Tottenham : Villas-Boas déjà sur la sellette, Ginola candidat...","Annoncé comme le fils spirituel de José Mourinho, André Villas-Boas ne connaît pas la même réussite ...","villas-boas-5"],[20332,"Equipe de France : les 23 pour le Brésil, son bilan, l'étrange Ballon d'Or... Deschamps se confie","Didier Deschamps est parvenu à qualifier l'équipe de France pour la prochaine Coupe du monde. Object...","deschamps-64"],[20329,"Le PSG voulait plus que la qualification - Débrief et NOTES des joueurs (PSG 2-1 Olympiakos)","Un nul lui suffisait pour se qualifier pour les 8es de finale de la Ligue des Champions. Mais le PSG...","maxwell-ibrahimovic-cavani-"],[20330,"Ligue des Champions : MU cartonne, le Real déroule, Vidal réveille la Juve, City a dû se faire violence","Huit matchs de la 5e journée de la Ligue des Champions étaient au programme ce mercredi soir. Manche...","valencia-rooney-"],[20328,"PSG : que faire de Pastore ?","Peu utilisé par Laurent Blanc, Javier Pastore reste une énigme au Paris Saint-Germain. Alors que le ...","pastore-51"],[20327,"Milan : Kaká, et si c'était lui le sauveur ?","De retour au Milan AC après un passage raté au Real Madrid, Ricardo Kaká semble retrouver une second...","kaka-11"],[20326,"Caen veut s'offrir un beau pactole en dénonçant Monaco !","La situation de l'AS Monaco ne fait pas que des heureux. Caen estime que la montée en Ligue 1 de l'A...","ocampos-1"],[20323,"Ligue des Champions : l'OM n'est pas au niveau, mais ce n'est pas le seul problème...","Cinquième défaite en cinq matchs de Ligue des Champions pour l'Olympique de Marseille mardi soir fac...","gignac-64"],[20321,"Un air de déjà vu pour l'OM... - Débrief et NOTES des joueurs (Arsenal 2-0 OM)","L'OM s'est de nouveau incliné (2-0) mardi soir, sur la pelouse d'Arsenal cette fois-ci, lors de la 5...","wilshere-"],[20322,"Ligue des Champions : le Barça et Chelsea battus, Dortmund et Milan brillent...","Les huit premiers matchs de la 5e journée de Ligue des Champions ont été joués mardi soir. L'Ajax a ...","neymar-vettman-"]];
 var txt1='';
@@ -148,6 +149,7 @@ for (var i=0, l1=c1.length; i<l1; i++ ) {
 // document.getElementById('alaune1').innerHTML=txt1;
 document.getElementById('alaune2').innerHTML='<ul>'+txt2+'</ul>';
 var viewc1='une';
+var firstart1=1;
 function goart(ida) {
 	var art1='<div class="author">le <b>03/12/2013</b> à <b>21h09</b><!--bouton_taille_police--></div>';
 	art1+='<h1>'+titres1[ida]+'</h1>';
@@ -156,6 +158,18 @@ function goart(ida) {
 	art1+='<div class="legend"></div>';
 	art1+='<div class="chapeau">'+chapo1[ida]+'</div>';
 	$('#topart').html(art1);
+        if (document.getElementById('facebook-jssdk')) { } else {
+	    var fjs = document.getElementsByTagName('script')[0];
+	    var js = document.createElement('script');
+	    js.id = 'facebook-jssdk';
+	    js.src = "http://connect.facebook.net/en_US/all.js#xfbml=1&status=1&cookie=1&appId=133142010090141";
+	    fjs.parentNode.insertBefore(js, fjs);
+	}
+	var newVal='<fb:comments href="http://www.maxifoot.fr/football/article-'+ida+'.htm" num_posts="20" width="500"></fb:comments>';
+	$('#cmtbfmf').html(newVal);
+	if (firstart1==0) {
+		FB.XFBML.parse($('#cmtbfmf').get(0),function() { $(".FB_Loader").remove(); });
+	} else { firstart1=0; }
 	$('#contents_'+viewc1).hide();
 	viewc1='art';
 	$('#contents_'+viewc1).show('slide',{direction:'right'},200);
