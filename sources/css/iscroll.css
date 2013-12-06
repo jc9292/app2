@@ -1,0 +1,20 @@
+#alaune1 { position:relative; width:100%; }
+.wrapper { position:absolute; z-index:1; top:0; bottom:0; width:100%; overflow:hidden; }
+#scroller { position:absolute; z-index:1; width:100%;
+        -webkit-transform: translateZ(0);
+        -moz-transform: translateZ(0);
+        -ms-transform: translateZ(0);
+        -o-transform: translateZ(0);
+        transform: translateZ(0);
+        -webkit-touch-callout:none;
+        -webkit-user-select:none;
+        -moz-user-select:none;
+        -ms-user-select:none;
+        user-select:none;
+        -webkit-text-size-adjust:none;
+        -moz-text-size-adjust:none;
+        -ms-text-size-adjust:none;
+        -o-text-size-adjust:none;
+        text-size-adjust:none;
+}
+.hook { height:50px; background:#999; box-shadow:0 -8px 5px -5px #999 inset; clear:both; position:relative; width:100%; overflow:hidden; text-align:center; margin-top:-50px; }
