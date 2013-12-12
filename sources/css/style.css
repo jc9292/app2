@@ -497,6 +497,7 @@ a.news,li.news{
 	cursor:pointer;
 	text-decoration: none;
 	display: block;
+	background: url("../images/arrow-right.png") 100% 50% no-repeat;
 	overflow: hidden;}
 a.previous,li.previous{
 	font-weight: bold;
@@ -586,6 +587,7 @@ a.previous,li.previous{
 	height: 50px;
 	line-height: 45px;
 	position: relative;
+	background-image: url("../images/arrow-right.png");
 	background-position:98% 50% ;
 	background-repeat:no-repeat ;
 	padding-right: 30px;
@@ -924,7 +926,7 @@ button.voteSondage{
         min-height: 30px;}
 .live1 { margin:0 6px; }
 .live1 a {display:block; border:#999 solid 1px; border-width:0 1px; height:36px; padding:0 8px 0 6px; line-height:36px;
-        background:url("http://m.maxifoot.fr/images/arrow-right.png") 99% 50% no-repeat; text-decoration:none; }
+        background:url("../images/arrow-right.png") 99% 50% no-repeat; text-decoration:none; }
 
 .live1 a:nth-child(2n+1) { background-color:#E6E6E6; }
 .live1 a:last-child { border-bottom:#999 solid 1px; }
